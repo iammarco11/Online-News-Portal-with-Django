@@ -9,10 +9,5 @@
             "src": "/(.*)",
             "dest": "newsportal/wsgi.py"
         }
-    ],
-    "functions": [{
-        "*": {
-            "excludeFiles": "media/**"
-        }
-    }]
+    ]
 }
