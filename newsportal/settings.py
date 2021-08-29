@@ -25,7 +25,7 @@ SECRET_KEY = '08nva+ja-kswomarqd*i5bcx+@e&)$uo6nsxmmfarukp04^k_ackz&0r*8('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
 
 # Application definition
@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'comment',
     'blacklist',
-    'django_crontab',  # for cron tab
-    'qr_code', # For QR Code
 ]
 
 MIDDLEWARE = [
