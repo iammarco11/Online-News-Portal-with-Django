@@ -12,7 +12,6 @@ from django.contrib.auth.models import User, Group, Permission
 from manager.models import Manager
 import string
 from ipware import get_client_ip  ## Get User IP Address
-from ip2geotools.databases.noncommercial import DbIpCity  ## Get User Location
 
 
 # Create your views here.
@@ -180,13 +179,7 @@ def myregister(request):
                 ip = "0.0.0.0"
             # Get User IP End
             # Get User Location Start
-            try:
-                response = DbIpCity.get(ip, api_key='free')
-                country = response.country + " | " + response.city
-
-            except:
                 country = "Unknown"
-            # Get User Location End
             
             user = User.objects.create_user(username=uname, email=email, password=password1)
             b = Manager(name=name, utxt=uname, email=email, ip=ip, country=country)
